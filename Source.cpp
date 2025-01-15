@@ -89,7 +89,7 @@ void SumSquares(const string& Nstr, vector<int>& result)//по формуле(n*
 	vector<int> mul1;
 	vector<int> mul2;
 	CreationNumber(Nstr, N);//превращает строку N в число 
-	one.push_back(1);//создание еденицы(вектор {1})
+	one.push_back(1);//создание единицы(вектор {1})
 	add(N, one, Nplus1);//вычисляется N+1
 	add(N, N, twoN);//вычисляется 2N
 	add(twoN, one, twoNplus1);//вычисляется 2N+1
