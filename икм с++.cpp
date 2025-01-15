@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include "Header.h"
@@ -13,16 +13,15 @@ int main()
 	while (true)
 	{
 		cout << "Введите число N(положительное целое число): ";
-		getline(cin, N);// считываем полностью строку, чтобы проверить если число написано неправильно(например с пробелом)
+		getline(cin, N);
 		bool correct = true;//переменная для проверки на правильность ввода
+		if (cin.fail()||N.empty()) {
+			cout << "Неккоректный ввод! Пожалуйста введите число заново" << endl;
+			cin.clear();
+			continue;
+		}
 		for (int i = 0; i < N.size(); i++) {
-			if (cin.fail() || N.empty()) {
-				cout << "Неккоректный ввод! Пожалуйста введите число заново" << endl;
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				continue;
-			}
-			if ((!isdigit(N[i]))|| N[0] == '0') {//если символ не является цифрой, число равно нулю или начинается с нуля булевая переменная false
+			if ((!isdigit(N[i]))|| N[0] == '0') {//если символ не является цифрой булевая переменная false
 				correct = false;
 				break;
 			}
